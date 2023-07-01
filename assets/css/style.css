@@ -1,0 +1,511 @@
+/* Visualización móvil. Se agrega efectos interactivos en logo
+y en tarjetas*/
+
+@media screen and (max-width: 575px) {
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: "Ysabeau SC", sans-serif;
+    }
+
+    nav {
+        grid-area: menu;
+        background-color: rgb(88, 49, 93);
+        color: antiquewhite;
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .lista_menu_principal {
+        display: none;
+    }
+
+    main {
+        grid-area: seccion-principal;
+        background-color: rgb(56, 19, 56);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    aside {
+        grid-area: filtro-de-busqueda;
+        background-color: rgb(121, 48, 121);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: aliceblue;
+    }
+
+    footer {
+        grid-area: pie-de-pagina;
+        background-color: rgb(88, 49, 93);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: antiquewhite;
+    }
+
+    .contenedor_de_areas_principales {
+        display: grid;
+        justify-content: center;
+        border: 1px solid #bbb;
+        grid-template-rows: 1fr 1fr auto 2fr;
+        grid-template-areas:
+            "menu"
+            "filtro-de-busqueda"
+            "seccion-principal"
+            "pie-de-pagina";
+    }
+
+    .logo {
+        display: flex;
+        margin-left: 2em;
+        gap: 0.4em;
+    }
+
+    svg {
+        margin-top: 0.1em;
+        width: 0.5em;
+        height: 1em;
+        font-size: 1.5em;
+        animation: move 2s infinite;
+    }
+
+    @keyframes move {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(0.5em);
+        }
+    }
+
+    .fa-solid {
+        margin-right: 2em;
+    }
+
+    .tarjeta_producto {
+        background-color: rgb(88, 49, 93);
+        border: solid 3px rgb(130, 96, 8);
+        text-align: center;
+        width: 80%;
+        height: auto;
+        text-align: center;
+        margin-top: 1em;
+        color: antiquewhite;
+    }
+
+    .tarjeta_producto img {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: transform 1s;
+    }
+
+
+
+    .tarjeta_producto img:hover {
+        filter: none;
+
+    }
+
+    .boton_detalle {
+        background-color: rgb(130, 96, 8);
+        border: none;
+        border-radius: 0.5em;
+        color: antiquewhite;
+        width: 5em;
+    }
+
+    .marcador_de_pagina {
+        display: grid;
+        height: 1em;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        height: 2em;
+    }
+
+    .marcador_de_pagina p {
+        border: solid 1.5px rgb(130, 96, 8);
+        border-radius: 0.1em;
+        color: rgb(130, 96, 8);
+    }
+
+    aside button {
+        border-radius: 0.5em;
+        border: none;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0%;
+        color: aliceblue;
+        width: 9em;
+        background-color: rgb(173, 133, 81);
+    }
+
+    aside form {
+        display: none;
+    }
+
+    .iconos_footer {
+        padding-top: 1em;
+    }
+}
+
+/* Visualización pantalla mediana. Se agrega visualizaciòn con annimación de logo 
+y efectos interectativos en tarjetas*/
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: "Ysabeau SC", sans-serif;
+    }
+
+    nav {
+        grid-area: menu;
+        background-color: rgb(88, 49, 93);
+        color: antiquewhite;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .lista_menu_principal {
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        margin-top: 1em;
+
+
+    }
+
+    main {
+        grid-area: seccion-principal;
+        background-color: rgb(56, 19, 56);
+        display: grid;
+        grid-template-columns: 46% 46%;
+        gap: 1em;
+        padding-left: 1.5em;
+
+
+
+    }
+
+    aside {
+        grid-area: filtro-de-busqueda;
+        background-color: rgb(121, 48, 121);
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        grid-area: pie-de-pagina;
+        background-color: rgb(88, 49, 93);
+        color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contenedor_de_areas_principales {
+        display: grid;
+        height: 100vh;
+        justify-content: center;
+        border: 1px solid #bbb;
+        grid-template-rows: 0.3fr 10fr 0.3fr;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            "menu menu"
+            "filtro-de-busqueda seccion-principal "
+            "pie-de-pagina pie-de-pagina ";
+
+    }
+
+    .logo {
+        display: flex;
+        gap: 0.4em;
+        justify-content: center;
+        align-items: start;
+    }
+
+    svg {
+        margin-top: 0.4em;
+        width: 0.5em;
+        height: 1em;
+        font-size: 1.5em;
+        animation: move 2s infinite;
+    }
+
+    @keyframes move {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(0.5em);
+        }
+    }
+
+    .logo h3 {
+        margin-top: 0.5em;
+    }
+
+    .fa-solid {
+        display: none;
+    }
+
+    .tarjeta_producto {
+        background-color: rgb(88, 49, 93);
+        border: solid 3px rgb(130, 96, 8);
+        color: antiquewhite;
+        margin-top: 1em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tarjeta_producto img {
+        width: 80%;
+        height: 15em;
+        filter: grayscale(100%);
+        transition: transform 1s;
+    }
+
+    .tarjeta_producto img:hover {
+        filter: none;
+        width: 100%;
+        height: 20em;
+    }
+
+    .boton_detalle {
+        background-color: rgb(130, 96, 8);
+        border: none;
+        border-radius: 0.5em;
+        color: antiquewhite;
+        width: 5em;
+    }
+
+    .marcador_de_pagina {
+        display: grid;
+        grid-column: 2 span;
+        justify-self: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        height: 2em;
+
+    }
+
+    .marcador_de_pagina p {
+        border: solid 1.5px rgb(130, 96, 8);
+        border-radius: 0.1em;
+        color: rgb(130, 96, 8);
+
+    }
+
+
+    aside button {
+        display: none;
+    }
+
+    aside p {
+        margin-top: 1em;
+        color: aliceblue;
+
+    }
+
+    aside form input {
+        border-radius: 0.5em;
+        border: none;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0%;
+        width: 9em;
+        color: aliceblue;
+        background-color: rgb(216, 180, 90);
+    }
+
+    .iconos_footer {
+        padding-top: 1em;
+    }
+}
+
+
+/* Visualización pantalla escritorio, se agrega animación en logo y efectos interactivo en tarjetas de main*/
+
+@media screen and (min-width: 992px) {
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: "Ysabeau SC", sans-serif;
+    }
+
+    nav {
+        grid-area: menu;
+        background-color: rgb(88, 49, 93);
+        color: antiquewhite;
+    }
+
+    .lista_menu_principal {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        align-items: center;
+        list-style: none;
+        gap: 0.5em;
+    }
+
+    main {
+        grid-area: seccion-principal;
+        background-color: rgb(56, 19, 56);
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0.7em;
+        gap: 1em;
+        justify-content: space-evenly;
+    }
+
+    aside {
+        grid-area: filtro-de-busqueda;
+        background-color: rgb(121, 48, 121);
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        grid-area: pie-de-pagina;
+        background-color: rgb(88, 49, 93);
+        color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contenedor_de_areas_principales {
+        display: grid;
+        justify-content: center;
+        border: 1px solid #bbb;
+        grid-template-columns: 2fr 10fr;
+        grid-template-areas:
+            "menu filtro-de-busqueda "
+            "menu seccion-principal"
+            "pie-de-pagina seccion-principal";
+    }
+
+    .logo {
+        display: flex;
+        gap: 0.4em;
+        margin-top: 1em;
+        justify-content: center;
+        align-items: start;
+    }
+
+    svg {
+        margin-top: 0.1em;
+        width: 1em;
+        height: 2em;
+        font-size: 1.5em;
+        animation: move 2s infinite;
+    }
+
+    @keyframes move {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(0.5em);
+        }
+    }
+
+    .logo h3 {
+        margin-top: 1.5em;
+    }
+
+    .fa-solid {
+        display: none;
+    }
+
+    .tarjeta_producto {
+        background-color: rgb(88, 49, 93);
+        border: solid 3px rgb(130, 96, 8);
+        color: antiquewhite;
+        margin-top: 1em;
+        text-align: center;
+        width: 15em;
+    }
+
+    .tarjeta_producto img {
+        width: 10em;
+        height: 15em;
+        filter: grayscale(100%);
+        transition: transform 1s;
+    }
+
+    .tarjeta_producto img:hover {
+        filter: none;
+        width: 15em;
+        height: 20em;
+    }
+
+    .boton_detalle {
+        background-color: rgb(130, 96, 8);
+        border: none;
+        border-radius: 0.5em;
+        color: antiquewhite;
+        width: 5em;
+    }
+
+    .marcador_de_pagina {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: start;
+        align-items: center;
+        height: 2em;
+        margin-right: 5em;
+    }
+
+    .marcador_de_pagina p {
+        border: solid 1.5px rgb(130, 96, 8);
+        border-radius: 0.1em;
+        color: rgb(130, 96, 8);
+
+    }
+
+    aside button {
+        display: none;
+    }
+
+    aside p {
+        margin-top: 1em;
+        color: aliceblue;
+    }
+
+    aside form input {
+        border-radius: 0.5em;
+        border: none;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0%;
+        width: 9em;
+        color: aliceblue;
+        background-color: rgb(216, 180, 90);
+    }
+
+    .iconos_footer {
+        padding-top: 1em;
+    }
+}
